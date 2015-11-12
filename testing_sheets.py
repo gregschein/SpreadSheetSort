@@ -45,16 +45,24 @@ def find_outliers(row):
 
 
 
-def sort_similar_outliers(outlier_dict):
-	for test in outlier_dict:
+def sort_similar_outliers(outlier_list):
+	storage = []
+	for test in outlier_list:
+		storage.append(test_name[test])
+		print test_name[test]
+	storage.sort(key=lambda x: x[6:])
+	print "________________________________"
+	for test in storage:
 		print test
+
 for x in range(2, 353):
 	find_outliers(x)
 
+# from random import shuffle
 
-# print outliers
-
-for test in outliers[66]:
-	print test_name[test] 
-
-sort_similar_outliers(outliers[66])
+# testing = outliers[66]
+# print testing
+# shuffle(testing)
+# print testing
+# sort_similar_outliers(testing)
+# sort_similar_outliers(outliers[66])
